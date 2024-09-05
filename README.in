@@ -1,0 +1,22 @@
+
+## peixoto
+
+A shaded distribution of the S3 client from the
+[AWS v2 SDK](https://github.com/aws/aws-sdk-java-v2).
+All packages and dependencies of the packages are relocated to a
+`com.io7m.peixoto.sdk.*` namespace for isolation from the rest of the
+dependency tree.
+
+This package exists to solve some specific dependency issues with other
+projects. If you don't know why you need this, then you probably don't. Use the
+AWS SDK directly.
+
+## Features
+
+* S3 access but isolated from the rest of the dependency tree.
+* Apache 2.0 license.
+
+## Usage
+
+Usage is identical to the [AWS v2 SDK](https://github.com/aws/aws-sdk-java-v2)
+except that packages start with `com.io7m.peixoto.sdk.software.amazon.*`.

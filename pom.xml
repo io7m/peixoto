@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.io7m.primogenitor</groupId>
+    <artifactId>com.io7m.primogenitor.full</artifactId>
+    <version>8.2.0</version>
+  </parent>
+
+  <groupId>com.io7m.peixoto</groupId>
+  <artifactId>com.io7m.peixoto</artifactId>
+  <version>2.27.8-SNAPSHOT</version>
+
+  <packaging>pom</packaging>
+  <name>com.io7m.peixoto</name>
+  <description>Packaged and shaded Amazon S3 SDK.</description>
+  <url>https://www.io7m.com/software/peixoto</url>
+
+  <modules>
+    <module>com.io7m.peixoto.sdk</module>
+  </modules>
+
+  <properties>
+    <!-- Configuration. -->
+    <io7m.api.previousVersion>0.0.1</io7m.api.previousVersion>
+    <io7m.java.targetJavaVersion>21</io7m.java.targetJavaVersion>
+
+    <!-- Third-party dependencies. -->
+    <org.slf4j.version>2.0.16</org.slf4j.version>
+    <software.amazon.awssdk.version>2.27.8</software.amazon.awssdk.version>
+    <org.junit.version>5.11.0</org.junit.version>
+
+    <containers.minio.version>RELEASE.2024-08-03T04-33-23Z</containers.minio.version>
+    <org.reactive-streams.version>1.0.4</org.reactive-streams.version>
+  </properties>
+
+  <licenses>
+    <license>
+      <name>ISC</name>
+      <url>https://www.io7m.com/license/isc.txt</url>
+    </license>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>https://www.github.com/io7m-com/peixoto</url>
+    <connection>scm:git:https://www.github.com/io7m-com/peixoto</connection>
+    <developerConnection>scm:git:https://www.github.com/io7m-com/peixoto</developerConnection>
+  </scm>
+
+  <developers>
+    <developer>
+      <id>io7m</id>
+      <name>io7m</name>
+      <email>code@io7m.com</email>
+      <url>https://www.io7m.com</url>
+    </developer>
+  </developers>
+
+  <issueManagement>
+    <url>https://www.github.com/io7m-com/peixoto/issues</url>
+    <system>GitHub Issues</system>
+  </issueManagement>
+
+  <distributionManagement>
+    <site>
+      <id>io7m.com</id>
+      <name>io7m.com</name>
+      <url>https://www.io7m.com/software/peixoto</url>
+    </site>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+
+  <ciManagement>
+    <system>GitHub Actions</system>
+    <url>https://www.github.com/io7m-com/peixoto/actions</url>
+  </ciManagement>
+
+  <prerequisites>
+    <maven>3.0.4</maven>
+  </prerequisites>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- AWS SDK -->
+      <dependency>
+        <groupId>software.amazon.awssdk</groupId>
+        <artifactId>bom</artifactId>
+        <version>2.27.8</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.reactivestreams</groupId>
+        <artifactId>reactive-streams</artifactId>
+        <version>${org.reactive-streams.version}</version>
+      </dependency>
+
+      <!-- Build, metadata, annotations. -->
+      <dependency>
+        <groupId>com.io7m.immutables-style</groupId>
+        <artifactId>com.io7m.immutables-style</artifactId>
+        <version>${com.io7m.immutables.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>${org.immutables.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${org.slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>${ch.qos.logback.version}</version>
+      </dependency>
+
+      <!-- Containers for test suite. -->
+      <dependency>
+        <groupId>com.io7m.ervilla</groupId>
+        <artifactId>com.io7m.ervilla.test_extension</artifactId>
+        <version>${com.io7m.ervilla.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.ervilla</groupId>
+        <artifactId>com.io7m.ervilla.api</artifactId>
+        <version>${com.io7m.ervilla.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.ervilla</groupId>
+        <artifactId>com.io7m.ervilla.native_exec</artifactId>
+        <version>${com.io7m.ervilla.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.zelador</groupId>
+        <artifactId>com.io7m.zelador.test_extension</artifactId>
+        <version>${com.io7m.zelador.version}</version>
+      </dependency>
+
+      <!-- Test suite -->
+      <dependency>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>${org.junit.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>net.jqwik</groupId>
+        <artifactId>jqwik-api</artifactId>
+        <version>${net.jqwik.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>net.jqwik</groupId>
+        <artifactId>jqwik-engine</artifactId>
+        <version>${net.jqwik.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.percentpass</groupId>
+        <artifactId>com.io7m.percentpass.extension</artifactId>
+        <version>1.0.1</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.annotation.bundle</artifactId>
+        <version>2.0.0</version>
+      </dependency>
+      <dependency>
+        <groupId>org.osgi</groupId>
+        <artifactId>org.osgi.annotation.versioning</artifactId>
+        <version>1.1.2</version>
+      </dependency>
+      <dependency>
+        <groupId>com.io7m.primogenitor</groupId>
+        <artifactId>com.io7m.primogenitor.support</artifactId>
+        <version>8.2.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+    <plugins>
+      <!-- Generate a site -->
+      <plugin>
+        <groupId>com.io7m.minisite</groupId>
+        <artifactId>com.io7m.minisite.maven_plugin</artifactId>
+        <inherited>false</inherited>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,28 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+  <p class="shields">
+    <a href="https://www.github.com/io7m-com/peixoto/actions?query=workflow%3Amain.linux.temurin.lts">
+      <img src="https://img.shields.io/github/actions/workflow/status/io7m-com/peixoto/main.linux.temurin.lts.yml"
+           alt="Build status"/>
+    </a>
+    <a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.peixoto%22">
+      <img src="https://img.shields.io/maven-central/v/com.io7m.peixoto/com.io7m.peixoto.svg?style=flat-square"
+           alt="Maven Central"/>
+    </a>
+    <a href="https://codecov.io/gh/io7m-com/peixoto">
+      <img src="https://img.shields.io/codecov/c/github/io7m-com/peixoto.svg?style=flat-square"
+           alt="Codecov"/>
+    </a>
+  </p>
+
+  <p>
+    A shaded distribution of the S3 client from the <a href="https://github.com/aws/aws-sdk-java-v2">AWS v2 SDK</a>.
+    All packages and dependencies of the packages are relocated to a <tt>com.io7m.peixoto.sdk.*</tt> namespace for
+    isolation from the rest of the dependency tree.
+  </p>
+
+  <p>
+    This package exists to solve some specific dependency issues with other projects. If you don't know why you need
+    this, then you probably don't. Use the AWS SDK directly.
+  </p>
+
+</div>
