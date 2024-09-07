@@ -4,7 +4,7 @@ peixoto
 [![Maven Central](https://img.shields.io/maven-central/v/com.io7m.peixoto/com.io7m.peixoto.svg?style=flat-square)](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22com.io7m.peixoto%22)
 [![Maven Central (snapshot)](https://img.shields.io/nexus/s/com.io7m.peixoto/com.io7m.peixoto?server=https%3A%2F%2Fs01.oss.sonatype.org&style=flat-square)](https://s01.oss.sonatype.org/content/repositories/snapshots/com/io7m/peixoto/)
 [![Codecov](https://img.shields.io/codecov/c/github/io7m-com/peixoto.svg?style=flat-square)](https://codecov.io/gh/io7m-com/peixoto)
-![Java Version](https://img.shields.io/badge/21-java?label=java&color=e6c35c)
+![Java Version](https://img.shields.io/badge/17-java?label=java&color=e65cc3)
 
 ![com.io7m.peixoto](./src/site/resources/peixoto.jpg?raw=true)
 
