@@ -32,7 +32,7 @@
     <!-- Third-party dependencies. -->
     <org.slf4j.version>2.0.16</org.slf4j.version>
     <software.amazon.awssdk.version>2.27.8</software.amazon.awssdk.version>
-    <org.junit.version>5.11.0</org.junit.version>
+    <org.junit.version>5.11.1</org.junit.version>
 
     <containers.minio.version>RELEASE.2024-08-03T04-33-23Z</containers.minio.version>
     <org.reactive-streams.version>1.0.4</org.reactive-streams.version>
